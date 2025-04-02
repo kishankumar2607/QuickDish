@@ -121,7 +121,9 @@ Images are stored in the `/image` folder and linked in the database under the `I
 
 - Kishan Kumar Das
 - Bibin Tom Joseph
-- Jiten
+- Jithin Thomas Jacob
+- Shantha Kumar
+- Kasivishwanadham Thota
 
 ---
 
