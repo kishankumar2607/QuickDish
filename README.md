@@ -119,10 +119,9 @@ Images are stored in the `/image` folder and linked in the database under the `I
 
 ## 📣 Team
 
-This project is developed as part of a **mock client campaign** for a college final assignment by a team of 3–4 students.
--Kishan Kumar Das
--Bibin Tom Joseph
--Jiten
+- Kishan Kumar Das
+- Bibin Tom Joseph
+- Jiten
 
 ---
 
