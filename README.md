@@ -122,7 +122,7 @@ Images are stored in the `/image` folder and linked in the database under the `I
 - Kishan Kumar Das
 - Bibin Tom Joseph
 - Jithin Thomas Jacob
-- Al Kundan Shifan Sajida Beevi Hussain (Star Of this group)
+- Al Shifan Sajida Beevi Hussain
 - Shantha Kumar
 - Kasivishwanadham Thota
 
