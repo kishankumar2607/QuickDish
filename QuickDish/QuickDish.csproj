@@ -140,6 +140,7 @@
     <Content Include="image\restaurants\wrapandroll.png" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Restaurants.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -251,6 +252,13 @@
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Restaurants.aspx.cs">
       <DependentUpon>Restaurants.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

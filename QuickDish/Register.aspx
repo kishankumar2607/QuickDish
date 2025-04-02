@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="QuickDish.Login"
-    MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Register Page" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="QuickDish.Register" MasterPageFile="~/Site.Master" %>
 
 
 
@@ -8,7 +7,7 @@
     <main class="py-5 my-2">
         <div class="container d-flex flex-column align-items-center justify-content-center">
             <section class="text-center">
-                <h2 class="fw-bold text-black mb-5">Welcome Back! Please Log In</h2>
+                <h2 class="fw-bold text-black mb-5">Welcome! Please Register</h2>
             </section>
 
             <section class="login-div p-4">
@@ -73,11 +72,11 @@
                 </div>
 
                 <div class="register-account">
-                    <p>Don't have an account </p><a href="Register">Register</a>
+                    <p>Have already an account </p><a href="Login">Log in</a>
                 </div>
 
                 <div class="d-flex align-items-center justify-content-center gap-4">
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="button py-2" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Register" CssClass="button py-2" OnClick="btnRegister_Click" />
                     <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="button py-2" OnClick="btnCancel_Click" />
                 </div>
             </section>
@@ -85,3 +84,4 @@
     </main>
 
 </asp:Content>
+
