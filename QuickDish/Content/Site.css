@@ -1,0 +1,150 @@
+﻿/* General Styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Navigation Bar Design Starts */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 5rem;
+}
+
+.logo-main-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .logo-main-div a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #dc4914;
+        padding-left: 1rem;
+    }
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+    .nav-links li {
+        margin: 0;
+    }
+
+        .nav-links li a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #dc4914;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .nav-links li span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #dc4914;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover {
+            color: #000000;
+        }
+
+        .nav-links li span:hover {
+            color: #000000;
+        }
+
+/* Navigation Bar Design Ends */
+
+/* Button Design Starts */
+
+.button {
+    background-color: #dc4914;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #dc4914;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+}
+
+    .button:hover {
+        background-color: transparent;
+        color: #dc4914;
+        cursor: pointer;
+    }
+
+/* Button Design Ends */
+
+/* Form Input Design Starts */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        font-size: 18px;
+        font-weight: 700;
+        color: #dc4914;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #dc4914 !important;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+/* Form Input Design Ends */
+
+/*Login Page Design Starts*/
+
+.login-div {
+    width: 50%;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+
+.error {
+    color: #ff0000;
+    font-weight: 600;
+}
+
+/*Login Page Design Ends*/
+
+/* Footer Design Starts */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+/* Footer Design Ends*/
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
