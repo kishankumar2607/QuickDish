@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
     background-color: #ffffff;
     color: #333;
 }
@@ -133,15 +133,41 @@ body {
 /*Login Page Design Ends*/
 
 /* Footer Design Starts */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-}
-/* Footer Design Ends*/
 
+.footer-div{
+    padding-top: 2.2rem;
+}
+
+.logo-description {
+    font-size: 18px;
+    line-height: 1.6;
+    padding-right: 4rem;
+    margin-top: 1.5rem;
+}
+
+.quick-links {
+    text-transform: uppercase;
+    color: #dc4914;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.quick-links-ul li {
+    margin-bottom: 10px;
+}
+
+.quick-links-ul li a {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+    .quick-links-ul li a:hover {
+        color: #dc4914 !important;
+        transition: all 0.3s ease-in;
+    }
+
+/* Footer Design Ends*/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .body-content {

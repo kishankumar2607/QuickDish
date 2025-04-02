@@ -129,10 +129,14 @@
     <Content Include="image\hero-bg.jpg" />
     <Content Include="image\restaurants\burgerhub.png" />
     <Content Include="image\restaurants\curryhouse.png" />
+    <Content Include="image\restaurants\dessertheaven.png" />
+    <Content Include="image\restaurants\grillmaster.png" />
     <Content Include="image\restaurants\noodlenest.png" />
     <Content Include="image\restaurants\pizzapalace.png" />
     <Content Include="image\restaurants\sushiworld.png" />
     <Content Include="image\restaurants\tacotime.png" />
+    <Content Include="image\restaurants\veggiedelight.png" />
+    <Content Include="image\restaurants\wrapandroll.png" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
