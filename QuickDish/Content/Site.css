@@ -21,6 +21,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 5rem;
+    z-index: 9999;
 }
 
 .logo-main-div {
@@ -242,6 +243,29 @@ body {
         color: #ffffff;
     }
 /* About Us Page Design Ends */
+
+/* Contact Us Page Design Starts*/
+
+.contact-section{
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.contact-section h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #dc4914;
+}
+
+.contact-section p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #000000;
+}
+
+/* Contact Us Page Design Ends*/
+
 /* Footer Design Starts */
 .footer-div {
     padding-top: 2.2rem;

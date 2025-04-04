@@ -129,6 +129,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Home.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="image\contact_us.jpg" />
     <Content Include="image\our_vision.jpg" />
     <Content Include="image\our_mission.jpg" />
     <Content Include="image\delivery_team.png" />

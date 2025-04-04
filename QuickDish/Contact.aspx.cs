@@ -13,5 +13,19 @@ namespace QuickDish
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string name = txtFullName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string message = txtMessage.Text.Trim();
+
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Thank you for contacting us! We will get back to you soon.');", true);
+
+            // Clear form fields
+            txtFullName.Text = "";
+            txtEmail.Text = "";
+            txtMessage.Text = "";
+        }
     }
 }
