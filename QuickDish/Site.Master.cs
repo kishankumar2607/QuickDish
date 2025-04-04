@@ -11,6 +11,18 @@ namespace QuickDish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Get the last segment from the URL (e.g., "Menu" from "/Menu")
+            string page = Request.Url.AbsolutePath.ToLower().Trim('/');
+
+            // Set active class based on the current page
+            liHome.Attributes["class"] = page == "home" ? "nav-item active" : "nav-item";
+            liMenu.Attributes["class"] = page == "menu" ? "nav-item active" : "nav-item";
+            liRestaurants.Attributes["class"] = page == "restaurants" ? "nav-item active" : "nav-item";
+            liCart.Attributes["class"] = page == "cart" ? "nav-item active" : "nav-item";
+            liAbout.Attributes["class"] = page == "about" ? "nav-item active" : "nav-item";
+            liAdmin.Attributes["class"] = page == "admin" ? "nav-item active" : "nav-item";
+            liLogin.Attributes["class"] = page == "login" ? "nav-item active" : "nav-item";
+
             HttpCookie userCookie = Request.Cookies["QuickDishUser"];
 
             if (userCookie != null && !IsPostBack)

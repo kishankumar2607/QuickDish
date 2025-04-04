@@ -115,9 +115,9 @@
             </div>
 
             <div class="text-center mt-5 pt-5 pb-3">
-                <h5 class="text-muted">Join thousands of happy customers — download the app or order
+                <h5 class="text-muted mb-4 pb-3">Join thousands of happy customers — download the app or order
                     now!</h5>
-                <a href="Restaurants.aspx" class="btn btn-danger mt-3 px-4 py-2">Explore Restaurants</a>
+                <a href="Restaurants" class="button">Explore Restaurants</a>
             </div>
         </div>
     </main>

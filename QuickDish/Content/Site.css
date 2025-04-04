@@ -8,12 +8,16 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: #ffffff;
-    color: #333;
 }
 
+.body-content{
+    margin-top: 6rem;
+}
 /* Navigation Bar Design Starts */
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 5rem;
@@ -37,36 +41,51 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
     .nav-links li {
         margin: 0;
     }
 
-        .nav-links li a {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #dc4914;
-            padding: 5px 10px;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-
-        .nav-links li span {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #dc4914;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
         .nav-links li a:hover {
-            color: #000000;
+            color: #dc4914;
         }
 
-        .nav-links li span:hover {
-            color: #000000;
+        .nav-links li a,
+        .nav-links li span {
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #dc4914;
+            padding: 0 !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .nav-links li a::after,
+            .nav-links li span::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 3px;
+                width: 0;
+                background-color: #dc4914;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links li a:hover::after,
+            .nav-links li span:hover::after,
+            .nav-links li.active a::after,
+            .nav-links li.active span::after {
+                width: 100%;
+            }
+
+        .nav-links li.active a::after,
+        .nav-links li.active span::after {
+            width: 100%;
         }
 
 /* Navigation Bar Design Ends */
@@ -134,9 +153,9 @@ body {
     color: #000000;
 }
 
-.register-account p{
-    margin-bottom: 0;
-}
+    .register-account p {
+        margin-bottom: 0;
+    }
 
     .register-account a {
         text-decoration: none;
@@ -197,7 +216,7 @@ body {
     margin-bottom: 12px;
 }
 
-.main-card{
+.main-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -212,16 +231,16 @@ body {
     max-width: 350px;
 }
 
-    .choose-us-card h6{
+    .choose-us-card h6 {
         font-size: 1.3rem;
         color: #ffffff;
         font-weight: 700;
         margin-bottom: 1rem;
     }
 
-.choose-us-card p{
-    color: #ffffff;
-} 
+    .choose-us-card p {
+        color: #ffffff;
+    }
 /* About Us Page Design Ends */
 /* Footer Design Starts */
 .footer-div {
@@ -247,21 +266,15 @@ body {
     margin-bottom: 10px;
 }
 
-.quick-links-ul li a {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-    .quick-links-ul li a:hover {
-        color: #dc4914 !important;
-        transition: all 0.3s ease-in;
+    .quick-links-ul li a {
+        font-size: 1rem;
+        font-weight: 600;
     }
+
+        .quick-links-ul li a:hover {
+            color: #dc4914 !important;
+            transition: all 0.3s ease-in;
+        }
 
 /* Footer Design Ends*/
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .body-content {
-        padding: 0;
-    }
-}

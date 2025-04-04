@@ -61,27 +61,28 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto nav-links">
-                            <li class="nav-item">
+
+                            <li class="nav-item active" id="liHome" runat="server">
                                 <a class="nav-link" href="Home">Home</a>
                             </li>
-
-                            <li class="nav-item">
+                             
+                            <li class="nav-item active" id="liMenu" runat="server">
                                 <a class="nav-link" href="Menu">Menu</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item active" id="liRestaurants" runat="server">
                                 <a class="nav-link" href="Restaurants">Restaurants</a>
                             </li>
 
-                            <li class="nav-item" id="liCart" runat="server">
+                            <li class="nav-item active" id="liCart" runat="server">
                                 <a class="nav-link" href="Cart">Cart</a>
                             </li>
 
-                            <li class="nav-item" id="liAbout" runat="server">
+                            <li class="nav-item active" id="liAbout" runat="server">
                                 <a class="nav-link" href="About">About</a>
                             </li>
 
-                            <li class="nav-item" id="liAdmin" runat="server">
+                            <li class="nav-item active" id="liAdmin" runat="server">
                                 <a class="nav-link" href="Admin">Admin</a>
                             </li>
 
