@@ -77,7 +77,6 @@
 
                 <div class="d-flex align-items-center justify-content-center gap-4">
                     <asp:Button ID="btnLogin" runat="server" Text="Register" CssClass="button py-2" OnClick="btnRegister_Click" />
-                    <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="button py-2" OnClick="btnCancel_Click" />
                 </div>
             </section>
         </div>

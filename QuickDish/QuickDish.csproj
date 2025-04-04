@@ -126,6 +126,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Home.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="image\our_vision.jpg" />
+    <Content Include="image\our_mission.jpg" />
+    <Content Include="image\delivery_team.png" />
     <Content Include="image\logo.png" />
     <Content Include="image\hero-bg.jpg" />
     <Content Include="image\restaurants\burgerhub.png" />
@@ -138,6 +141,7 @@
     <Content Include="image\restaurants\tacotime.png" />
     <Content Include="image\restaurants\veggiedelight.png" />
     <Content Include="image\restaurants\wrapandroll.png" />
+    <Content Include="image\team.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="Register.aspx" />

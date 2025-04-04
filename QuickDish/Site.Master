@@ -10,14 +10,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossOrigin="true"
-    />
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="true" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        rel="stylesheet" />
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -75,17 +73,17 @@
                                 <a class="nav-link" href="Restaurants">Restaurants</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item" id="liCart" runat="server">
                                 <a class="nav-link" href="Cart">Cart</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item" id="liAbout" runat="server">
                                 <a class="nav-link" href="About">About</a>
                             </li>
 
-                            <%-- <li class="nav-item" id="liAdmin" runat="server"> --%>
-                            <%--    <a class="nav-link" href="Admin">Admin</a> --%>
-                            <%-- </li> --%>
+                            <li class="nav-item" id="liAdmin" runat="server">
+                                <a class="nav-link" href="Admin">Admin</a>
+                            </li>
 
                             <li class="nav-item" id="liLogin" runat="server">
                                 <a class="nav-link" href="Login">Login</a>
@@ -116,8 +114,10 @@
                         <a class="navbar-brand" href="Home">
                             <img src="Image/logo.png" alt="BookStore Logo" width="110" height="70" class="d-inline-block align-text-top" />
                         </a>
-                        <p class="logo-description">Delivering delicious meals from your favorite restaurants right to your door. Fast,
-                            fresh, and flavorful.</p>
+                        <p class="logo-description">
+                            Delivering delicious meals from your favorite restaurants right to your door. Fast,
+                            fresh, and flavorful.
+                        </p>
                     </div>
 
                     <div class="col-md-4 mb-3">
@@ -134,9 +134,11 @@
 
                     <div class="col-md-4 mb-3">
                         <h5 class="quick-links">Contact</h5>
-                        <p><strong>Email: </strong> <a href="mailto:support@quickdish.com" class="text-light text-decoration-none">support@quickdish.com</a></p>
-                        <p><strong>Phone: </strong> <a href="tel:+1 (123) 456-7890" class="text-light text-decoration-none">+1 (123) 456-7890</a></p>
-                        <p><strong>Location: </strong> 123 Foodie Blvd, Toronto, ON</p>
+                        <p><strong>Email: </strong><a href="mailto:support@quickdish.com" class="text-light text-decoration-none">
+                            support@quickdish.com</a></p>
+                        <p><strong>Phone: </strong><a href="tel:+1 (123) 456-7890" class="text-light text-decoration-none">
+                            +1 (123) 456-7890</a></p>
+                        <p><strong>Location: </strong>123 Foodie Blvd, Toronto, ON</p>
                     </div>
                 </div>
 

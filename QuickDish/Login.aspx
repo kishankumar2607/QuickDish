@@ -13,30 +13,6 @@
 
             <section class="login-div p-4">
                 <div class="form-group mb-4">
-                    <label for="txtFirstName" class="pb-0">First Name:</label>
-                    <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" />
-                    <asp:RequiredFieldValidator
-                        ID="rfvFirstName"
-                        runat="server"
-                        ControlToValidate="txtFirstName"
-                        ErrorMessage="First Name is required."
-                        Display="Dynamic"
-                        CssClass="error" />
-                </div>
-
-                <div class="form-group mb-4">
-                    <label for="txtLastName" class="pb-0">Last Name:</label>
-                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" />
-                    <asp:RequiredFieldValidator
-                        ID="rfvLastName"
-                        runat="server"
-                        ControlToValidate="txtLastName"
-                        ErrorMessage="Last Name is required."
-                        Display="Dynamic"
-                        CssClass="error" />
-                </div>
-
-                <div class="form-group mb-4">
                     <label for="txtEmail" class="pb-0">Email Address:</label>
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" />
                     <asp:RequiredFieldValidator
@@ -78,7 +54,6 @@
 
                 <div class="d-flex align-items-center justify-content-center gap-4">
                     <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="button py-2" OnClick="btnLogin_Click" />
-                    <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="button py-2" OnClick="btnCancel_Click" />
                 </div>
             </section>
         </div>

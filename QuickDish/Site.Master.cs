@@ -11,28 +11,53 @@ namespace QuickDish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["firstName"] != null)
+            HttpCookie userCookie = Request.Cookies["QuickDishUser"];
+
+            if (userCookie != null && !IsPostBack)
             {
-                // User is logged in.
-                //liAdmin.Visible = true;
+                string firstName = userCookie["FirstName"];
+                string userType = userCookie["UserType"];
+
+                lblUser.InnerText = "Welcome, " + firstName;
                 liLogin.Visible = false;
                 liUser.Visible = true;
                 liLogout.Visible = true;
-                lblUser.InnerText = "Welcome, " + Session["firstName"].ToString();
+
+                liAdmin.Visible = userType == "Admin";
+
+                if (userType == "Admin")
+                {
+                    liCart.Visible = false;
+                    liAbout.Visible = false;
+                }
+                else
+                {
+                    liCart.Visible = true;
+                    liAbout.Visible = true;
+                }
             }
-            else
+            else if (!IsPostBack)
             {
-                // User is not logged in.
-                //liAdmin.Visible = false;
                 liLogin.Visible = true;
                 liUser.Visible = false;
                 liLogout.Visible = false;
+                liAdmin.Visible = false;
+                liCart.Visible = true;
+                liAbout.Visible = true;
             }
         }
+
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("Home");
+            if (Request.Cookies["QuickDishUser"] != null)
+            {
+                HttpCookie cookie = new HttpCookie("QuickDishUser");
+                cookie.Expires = DateTime.Now.AddDays(-1); // delete
+                Response.Cookies.Add(cookie);
+            }
+
+            Response.Redirect("Home.aspx");
         }
     }
 }
