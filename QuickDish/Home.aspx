@@ -58,12 +58,11 @@
                         <div class="dish-item">
                             <div class="dish-img">
                                 <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("ItemName") %>' />
-                                <div class="favorite-icon"><i class="bi bi-cart-fill"></i></div>
                             </div>
                             <p class="dish-name"><%# Eval("ItemName") %></p>
                             <p class="dish-description"><%# Eval("Description") %></p>
                             <div class="dish-details">
-                                <span class="dish-price">$<%# Eval("Price", "{0:F2}") %></span>
+                                <span class="dish-price"><strong>Price: </strong>$<%# Eval("Price", "{0:F2}") %></span>
                                 <span class="dish-rating">&#9733; 4.9</span>
                             </div>
                         </div>
@@ -75,7 +74,10 @@
 
         <asp:SqlDataSource ID="SqlDataSourceDishes" runat="server"
             ConnectionString="<%$ ConnectionStrings:FoodDeliveryConnection %>"
-            SelectCommand="SELECT TOP 6 ItemName, Description, Price, ImageUrl FROM MenuItems WHERE ImageUrl IS NOT NULL AND Description IS NOT NULL">
+            SelectCommand="SELECT TOP 6 ItemName, Description, Price, ImageUrl 
+                   FROM MenuItems 
+                   WHERE ImageUrl IS NOT NULL AND Description IS NOT NULL 
+                   ORDER BY MenuItemID DESC">
         </asp:SqlDataSource>
 
         <div class="container testimonial-section">

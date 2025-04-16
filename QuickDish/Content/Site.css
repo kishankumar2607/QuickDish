@@ -363,22 +363,6 @@ body {
         object-fit: cover;
     }
 
-.favorite-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #de5f1e;
-    color: #ffffff;
-    padding: 5px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
 .dish-name {
     color: #000000;
     font-size: 1.5rem;
@@ -396,7 +380,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.5rem;
 }
 
 .dish-price {
