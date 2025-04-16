@@ -78,15 +78,6 @@ namespace QuickDish
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revCardNumber;
 
         /// <summary>
-        /// revExpiryDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revExpiryDate;
-
-        /// <summary>
         /// revCVV control.
         /// </summary>
         /// <remarks>
@@ -330,6 +321,15 @@ namespace QuickDish
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvExpiryDate;
 
         /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
         /// txtCVV control.
         /// </summary>
         /// <remarks>
@@ -346,6 +346,15 @@ namespace QuickDish
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCVV;
+
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
         /// btnSubmitOrder control.

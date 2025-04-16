@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Checkout Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="Checkout.aspx.cs" Inherits="QuickDish.Checkout" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -48,12 +48,6 @@
                             <asp:RegularExpressionValidator ID="revCardNumber" runat="server"
                                 ControlToValidate="txtCardNumber" ValidationExpression="^\d{16}$"
                                 ErrorMessage="Card number must be 16 digits."
-                                ForeColor="Red" Display="Dynamic" />
-
-                            <asp:RegularExpressionValidator ID="revExpiryDate" runat="server"
-                                ControlToValidate="txtExpiryDate"
-                                ValidationExpression="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$"
-                                ErrorMessage="Enter a valid date in DD/MM/YYYY format."
                                 ForeColor="Red" Display="Dynamic" />
 
                             <asp:RegularExpressionValidator ID="revCVV" runat="server"
@@ -159,20 +153,33 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="txtExpiryDate">Expiry Date (DD/MM/YYYY):</label>
+                            <label for="txtExpiryDate">Expiry Date (MM/YY):</label>
                             <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="form-control" Required="true" />
                             <asp:RequiredFieldValidator ID="rfvExpiryDate" runat="server"
                                 ControlToValidate="txtExpiryDate"
                                 ErrorMessage="Expiry date is required."
                                 ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                                ControlToValidate="txtExpiryDate"
+                                ValidationExpression="^(0[1-9]|1[0-2])\/([0-9]{2})$"
+                                ErrorMessage="Enter a valid expiry date (MM/YY)"
+                                ForeColor="Red" Display="Dynamic" />
                         </div>
+
 
                         <div class="form-group">
                             <label for="txtCVV">CVV:</label>
-                            <asp:TextBox ID="txtCVV" runat="server" CssClass="form-control" Required="true" />
+                            <asp:TextBox ID="txtCVV" runat="server" CssClass="form-control" Required="true" TextMode="Password"
+                                MaxLength="3" />
                             <asp:RequiredFieldValidator ID="rfvCVV" runat="server" ControlToValidate="txtCVV"
                                 ErrorMessage="CVV is required." ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+                                ControlToValidate="txtCVV"
+                                ValidationExpression="^\d{3}$"
+                                ErrorMessage="CVV must be 3 digits."
+                                ForeColor="Red" Display="Dynamic" />
                         </div>
+
                     </div>
                 </div>
 
