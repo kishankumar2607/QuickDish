@@ -175,6 +175,7 @@
     <Content Include="Menu.aspx" />
     <Content Include="OrderConfirmation.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RestaurantMenu.aspx" />
     <Content Include="Restaurants.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -327,6 +328,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantMenu.aspx.cs">
+      <DependentUpon>RestaurantMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RestaurantMenu.aspx.designer.cs">
+      <DependentUpon>RestaurantMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Restaurants.aspx.cs">
       <DependentUpon>Restaurants.aspx</DependentUpon>

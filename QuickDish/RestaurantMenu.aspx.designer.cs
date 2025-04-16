@@ -11,25 +11,34 @@ namespace QuickDish
 {
 
 
-    public partial class Restaurants
+    public partial class RestaurantMenu
     {
 
         /// <summary>
-        /// RestaurantRepeater control.
+        /// lblRestaurantName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RestaurantRepeater;
+        protected global::System.Web.UI.WebControls.Label lblRestaurantName;
 
         /// <summary>
-        /// SqlDataSourceRestaurants control.
+        /// RestaurantMenuRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceRestaurants;
+        protected global::System.Web.UI.WebControls.Repeater RestaurantMenuRepeater;
+
+        /// <summary>
+        /// btnOrderNow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrderNow;
     }
 }
