@@ -1,66 +1,188 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="QuickDish.Checkout" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Checkout.aspx.cs" Inherits="QuickDish.Checkout" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main class="container py-5">
-        <h2 class="text-center mb-4">Checkout</h2>
 
-        <!-- Checkout Form -->
-        <asp:ValidationSummary ID="ValidationSummary" runat="server" CssClass="text-danger mb-3" />
+    <main>
+        <div id="formCheckout">
+            <div class="checkout-container">
+                <h2 class="checkout-container-h2">Checkout Page</h2>
 
-        <!-- Full Name -->
-        <asp:TextBox ID="NameTextBox" runat="server" CssClass="form-control" placeholder="Enter your full name" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="NameValidator" runat="server" ControlToValidate="NameTextBox" InitialValue="Enter your full name" ErrorMessage="Name is required" ForeColor="Red" Display="Dynamic" />
+                <div class="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <div class="form-group">
+                        <strong class="totalItems">Total Items:</strong>
+                        <asp:Label ID="lblTotalItems" runat="server" CssClass="lblTotalItems" />
+                    </div>
+                    <div class="form-group">
+                        <strong class="totalPrice">Total Price:</strong>
+                        <asp:Label ID="lblTotalPrice" runat="server" CssClass="lblTotalPrice" />
+                    </div>
+                </div>
 
-        <!-- Email -->
-        <asp:TextBox ID="EmailTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter your email" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="EmailValidator" runat="server" ControlToValidate="EmailTextBox" InitialValue="Enter your email" ErrorMessage="Email is required" ForeColor="Red" Display="Dynamic" />
-        <asp:RegularExpressionValidator ID="EmailRegexValidator" runat="server" ControlToValidate="EmailTextBox" ValidationExpression="^\S+@\S+\.\S+$" ErrorMessage="Please enter a valid email" ForeColor="Red" Display="Dynamic" />
+                <div class="checkout-main-container">
+                    <div class="checkout-section">
+                        <div class="display-validation-error">
+                            <asp:RegularExpressionValidator ID="revEmail" runat="server"
+                                ControlToValidate="txtEmail" ValidationExpression="^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"
+                                ErrorMessage="Invalid email format." ForeColor="Red" Display="Dynamic" />
 
-        <!-- Phone Number -->
-        <asp:TextBox ID="PhoneTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter your phone number" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="PhoneValidator" runat="server" ControlToValidate="PhoneTextBox" InitialValue="Enter your phone number" ErrorMessage="Phone number is required" ForeColor="Red" Display="Dynamic" />
+                            <asp:CompareValidator ID="cvEmail" runat="server" ControlToValidate="txtEmailAgain"
+                                ControlToCompare="txtEmail" ErrorMessage="Email addresses do not match."
+                                ForeColor="Red" Display="Dynamic" />
 
-        <!-- Address -->
-        <asp:TextBox ID="AddressTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter your address" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="AddressValidator" runat="server" ControlToValidate="AddressTextBox" InitialValue="Enter your address" ErrorMessage="Address is required" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revPhone" runat="server"
+                                ControlToValidate="txtPhone"
+                                ErrorMessage="Invalid phone format. Use 123-456-7890."
+                                ValidationExpression="^\d{3}-\d{3}-\d{4}$"
+                                ForeColor="Red"
+                                Display="Dynamic" />
 
-        <!-- Postal Code (Canadian) -->
-        <asp:TextBox ID="PostalCodeTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter your postal code" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="PostalCodeValidator" runat="server" ControlToValidate="PostalCodeTextBox" InitialValue="Enter your postal code" ErrorMessage="Postal code is required" ForeColor="Red" Display="Dynamic" />
-        <asp:RegularExpressionValidator ID="PostalCodeRegexValidator" runat="server" ControlToValidate="PostalCodeTextBox" ValidationExpression="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" ErrorMessage="Please enter a valid Canadian postal code (e.g., K1A 0B1)" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revZipCode" runat="server"
+                                ControlToValidate="txtzipCode"
+                                ErrorMessage="Invalid Postal Code format. Use 6 alphanumeric characters (e.g., A1B2C3)."
+                                ValidationExpression="^[A-Za-z0-9]{6}$"
+                                ForeColor="Red"
+                                Display="Dynamic" />
 
-        <!-- Province -->
-        <asp:DropDownList ID="ProvinceDropDown" runat="server" CssClass="form-control mt-3">
-            <asp:ListItem Text="Select Province" Value="" />
-            <asp:ListItem Text="Alberta" Value="AB" />
-            <asp:ListItem Text="British Columbia" Value="BC" />
-            <asp:ListItem Text="Manitoba" Value="MB" />
-            <asp:ListItem Text="New Brunswick" Value="NB" />
-            <asp:ListItem Text="Newfoundland and Labrador" Value="NL" />
-            <asp:ListItem Text="Nova Scotia" Value="NS" />
-            <asp:ListItem Text="Ontario" Value="ON" />
-            <asp:ListItem Text="Prince Edward Island" Value="PE" />
-            <asp:ListItem Text="Quebec" Value="QC" />
-            <asp:ListItem Text="Saskatchewan" Value="SK" />
-        </asp:DropDownList>
-        <asp:RequiredFieldValidator ID="ProvinceValidator" runat="server" ControlToValidate="ProvinceDropDown" InitialValue="Select Province" ErrorMessage="Province is required" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revCardNumber" runat="server"
+                                ControlToValidate="txtCardNumber" ValidationExpression="^\d{16}$"
+                                ErrorMessage="Card number must be 16 digits."
+                                ForeColor="Red" Display="Dynamic" />
 
-        <!-- Credit Card Number -->
-        <asp:TextBox ID="CardNumberTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter your credit card number" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="CardNumberValidator" runat="server" ControlToValidate="CardNumberTextBox" InitialValue="Enter your credit card number" ErrorMessage="Credit card number is required" ForeColor="Red" Display="Dynamic" />
-        <asp:RegularExpressionValidator ID="CardNumberRegexValidator" runat="server" ControlToValidate="CardNumberTextBox" ValidationExpression="^\d{16}$" ErrorMessage="Please enter a valid 16-digit credit card number" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revExpiryDate" runat="server"
+                                ControlToValidate="txtExpiryDate"
+                                ValidationExpression="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$"
+                                ErrorMessage="Enter a valid date in DD/MM/YYYY format."
+                                ForeColor="Red" Display="Dynamic" />
 
-        <!-- Expiry Date -->
-        <asp:TextBox ID="ExpiryDateTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter card expiry date (MM/YY)" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="ExpiryDateValidator" runat="server" ControlToValidate="ExpiryDateTextBox" InitialValue="Enter card expiry date" ErrorMessage="Expiry date is required" ForeColor="Red" Display="Dynamic" />
-        <asp:RegularExpressionValidator ID="ExpiryDateRegexValidator" runat="server" ControlToValidate="ExpiryDateTextBox" ValidationExpression="^(0[1-9]|1[0-2])\/([0-9]{2})$" ErrorMessage="Please enter a valid expiry date (MM/YY)" ForeColor="Red" Display="Dynamic" />
+                            <asp:RegularExpressionValidator ID="revCVV" runat="server"
+                                ControlToValidate="txtCVV" ValidationExpression="^\d{3}$"
+                                ErrorMessage="CVV must be 3 digits." ForeColor="Red" Display="Dynamic" />
+                        </div>
 
-        <!-- CVV -->
-        <asp:TextBox ID="CvvTextBox" runat="server" CssClass="form-control mt-3" placeholder="Enter card CVV" required="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="CvvValidator" runat="server" ControlToValidate="CvvTextBox" InitialValue="Enter card CVV" ErrorMessage="CVV is required" ForeColor="Red" Display="Dynamic" />
-        <asp:RegularExpressionValidator ID="CvvRegexValidator" runat="server" ControlToValidate="CvvTextBox" ValidationExpression="^\d{3}$" ErrorMessage="Please enter a valid 3-digit CVV" ForeColor="Red" Display="Dynamic" />
+                        <h2>Contact Information</h2>
+                        <div class="form-group">
+                            <label for="txtEmail">Email Address:</label>
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
+                                ErrorMessage="Email is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
 
-        <!-- Proceed to Payment -->
-        <asp:Button ID="ProceedButton" runat="server" Text="Proceed to Payment" CssClass="btn btn-success mt-3" OnClick="ProceedButton_Click" />
+                        <div class="form-group">
+                            <label for="txtEmailAgain">Re-Type Email Address:</label>
+                            <asp:TextBox ID="txtEmailAgain" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvEmailAgain" runat="server" ControlToValidate="txtEmailAgain"
+                                ErrorMessage="Please re-type your email address." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtFirstName">First Name:</label>
+                            <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName"
+                                ErrorMessage="First Name is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtLastName">Last Name:</label>
+                            <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" ControlToValidate="txtLastName"
+                                ErrorMessage="Last Name is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtPhone">Phone Number:</label>
+                            <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ControlToValidate="txtPhone"
+                                ErrorMessage="Phone number is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h2>Billing Address</h2>
+
+                        <div class="form-group">
+                            <label for="txtAddress">Address:</label>
+                            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvAddress" runat="server" ControlToValidate="txtAddress"
+                                ErrorMessage="Address is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtCity">City:</label>
+                            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvCity" runat="server" ControlToValidate="txtCity"
+                                ErrorMessage="City is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtzipCode">Zip Code:</label>
+                            <asp:TextBox ID="txtzipCode" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvzipCode" runat="server" ControlToValidate="txtzipCode"
+                                ErrorMessage="Zip Code is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtState">State:</label>
+                            <asp:TextBox ID="txtState" runat="server" CssClass="form-control" Text="Ontario"
+                                Required="true" ReadOnly="true" />
+                            <asp:RequiredFieldValidator ID="rfvState" runat="server" ControlToValidate="txtState"
+                                ErrorMessage="State is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtCountry">Country:</label>
+                            <asp:TextBox ID="txtCountry" runat="server" CssClass="form-control" Text="Canada"
+                                Required="true" ReadOnly="true" />
+                            <asp:RequiredFieldValidator ID="rfvCountry" runat="server" ControlToValidate="txtCountry"
+                                ErrorMessage="Country is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h2>Payment Information</h2>
+                        <div class="form-group">
+                            <label for="ddlPaymentMethod">Payment Method:</label>
+                            <asp:DropDownList ID="ddlPaymentMethod" runat="server" CssClass="form-control" Required="true">
+                                <asp:ListItem Text="Credit Card" Value="CreditCard" />
+                                <asp:ListItem Text="Debit Card" Value="DebitCard" />
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvPaymentMethod" runat="server" ControlToValidate="ddlPaymentMethod"
+                                ErrorMessage="Payment method is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtCardNumber">Card Number:</label>
+                            <asp:TextBox ID="txtCardNumber" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvCardNumber" runat="server" ControlToValidate="txtCardNumber"
+                                ErrorMessage="Card number is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtExpiryDate">Expiry Date (DD/MM/YYYY):</label>
+                            <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvExpiryDate" runat="server"
+                                ControlToValidate="txtExpiryDate"
+                                ErrorMessage="Expiry date is required."
+                                ForeColor="Red" Display="Dynamic" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtCVV">CVV:</label>
+                            <asp:TextBox ID="txtCVV" runat="server" CssClass="form-control" Required="true" />
+                            <asp:RequiredFieldValidator ID="rfvCVV" runat="server" ControlToValidate="txtCVV"
+                                ErrorMessage="CVV is required." ForeColor="Red" Display="Dynamic" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-buttons">
+                    <asp:Button ID="btnSubmitOrder" runat="server" Text="Check Out" CssClass="button"
+                        OnClick="btnSubmitOrder_Click" />
+                </div>
+            </div>
+        </div>
     </main>
+
+
 </asp:Content>

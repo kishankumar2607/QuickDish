@@ -847,8 +847,136 @@ body {
     font-size: 16px;
 }
 
-
 /* Cart Page Design Ends */
+
+/*CheckOut Page Design Ends*/
+
+.display-validation-error {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#formCheckout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout-container {
+    margin: 1rem 0rem;
+    padding: 3rem 0rem;
+    width: 50%;
+}
+
+.checkout-container-h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #dc4914;
+    text-align: center;
+    padding-bottom: 2.5rem;
+}
+
+.checkout-main-container {
+    padding: 1.2rem 2.5rem 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.4);
+}
+
+.checkout-section {
+    margin-bottom: 20px;
+}
+
+    .checkout-section h2 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #dc4914;
+        padding-bottom: 1.5rem;
+    }
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        font-size: 18px;
+        font-weight: 700;
+        color: #000000;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.checkout-summary {
+    margin-bottom: 2.5rem;
+}
+
+    .checkout-summary h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #000000;
+        padding: 1rem 0rem;
+    }
+
+.totalItems {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.totalPrice {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.lblTotalItems {
+    font-size: 18px;
+    font-weight: 700;
+    color: #dc4914;
+}
+
+.lblTotalPrice {
+    font-size: 18px;
+    font-weight: 700;
+    color: #dc4914;
+}
+
+.checkout-buttons {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.optional-label {
+    font-weight: bold;
+    display: block;
+    padding-bottom: 10px !important;
+}
+
+.checkbox-group, .radio-group {
+    margin-bottom: 20px;
+}
+
+.checkbox-item, .radio-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+    .checkbox-item input, .radio-item input {
+        margin-right: 15px;
+    }
+
+/*CheckOut Page Design Ends*/
 
 /* About Us Page Design Starts */
 .about-section h3 {
