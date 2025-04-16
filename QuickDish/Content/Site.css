@@ -637,6 +637,7 @@ body {
 
 .dish-item {
     display: flex;
+    flex-direction: column;
 }
 
 .menu-item{
@@ -730,6 +731,125 @@ body {
 }
 
 /* Menu Page Design Ends */
+
+/* Cart Page Design Starts */
+
+.welcome-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cart-welcome-msg {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #dc4914;
+    text-align: center;
+}
+
+.cart-emplty-msg {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ff0000;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+    .table thead {
+        background-color: #dc4914;
+        color: white;
+    }
+
+    .table th,
+    .table td {
+        padding: 15px;
+        vertical-align: middle !important;
+        font-size: 1rem;
+    }
+
+        .table td img {
+            border-radius: 5px;
+            width: 120px;
+            height: auto;
+            object-fit: cover;
+        }
+
+    .table tbody tr:hover {
+        background-color: #f9f9f9;
+        transition: background-color 0.3s;
+    }
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+    }
+
+.total-items-container{
+    margin: 3rem 0rem 2rem;
+}
+
+.total-items-container p{
+    font-size: 20px;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.total-items-container h4{
+    color: #000000;
+    margin-top: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+    .total-items-container h4 strong{
+        color: #dc4914;
+    }
+
+.total-items-container p strong{
+    font-weight: 700;
+    color: #dc4914;
+}
+
+.clear-proced-button{
+    margin-bottom: 2rem;
+}
+
+.btn-warning {
+    font-weight: 700;
+}
+
+.btn-success {
+    background-color: #28a745;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+.text-danger {
+    color: red;
+    font-size: 16px;
+}
+
+
+/* Cart Page Design Ends */
+
 /* About Us Page Design Starts */
 .about-section h3 {
     font-size: 3rem;

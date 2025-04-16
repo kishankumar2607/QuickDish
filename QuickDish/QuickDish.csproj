@@ -107,6 +107,7 @@
       <DependentUpon>FoodDeliveryDB.mdf</DependentUpon>
     </Content>
     <Content Include="Cart.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
@@ -140,6 +141,7 @@
     <Content Include="image\chocolatecake.jpg" />
     <Content Include="image\contact_us.jpg" />
     <Content Include="image\dessert.png" />
+    <Content Include="image\menu-banner.jpg" />
     <Content Include="image\fast-delivery.png" />
     <Content Include="image\garlicnaan.jpg" />
     <Content Include="image\gift.png" />
@@ -271,6 +273,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

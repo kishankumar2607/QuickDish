@@ -15,6 +15,42 @@ namespace QuickDish
     {
 
         /// <summary>
+        /// WelcomeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label WelcomeLabel;
+
+        /// <summary>
+        /// EmptyCartLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmptyCartLabel;
+
+        /// <summary>
+        /// CartPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel CartPanel;
+
+        /// <summary>
+        /// QuantityMessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label QuantityMessageLabel;
+
+        /// <summary>
         /// CartGridView control.
         /// </summary>
         /// <remarks>
@@ -22,6 +58,33 @@ namespace QuickDish
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView CartGridView;
+
+        /// <summary>
+        /// TotalItemsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalItemsLabel;
+
+        /// <summary>
+        /// SubtotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SubtotalLabel;
+
+        /// <summary>
+        /// TaxLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TaxLabel;
 
         /// <summary>
         /// TotalPriceLabel control.
@@ -42,12 +105,21 @@ namespace QuickDish
         protected global::System.Web.UI.WebControls.Button ClearCartButton;
 
         /// <summary>
-        /// EmptyCartLabel control.
+        /// CheckoutButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmptyCartLabel;
+        protected global::System.Web.UI.WebControls.Button CheckoutButton;
+
+        /// <summary>
+        /// CheckoutMessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CheckoutMessageLabel;
     }
 }
