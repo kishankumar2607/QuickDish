@@ -1,28 +1,30 @@
+# 🍽️ QuickDish - Online Food Ordering Web App with Admin Portal
 
-# 🍽️ QuickDish - Online Food Delivery Website with Admin Portal
-
-**QuickDish** is a responsive ASP.NET Web Forms eCommerce platform designed for online food ordering and delivery. It allows customers to browse restaurants, view menus, add items to a cart, and place orders. Admin users can manage restaurant listings, menu items, orders, and user accounts through a secure backend panel.
+**QuickDish** is a responsive ASP.NET Web Forms food ordering platform where customers can explore restaurants, browse menus, and place orders. Admins can manage restaurants, menu items, and orders through a secured dashboard. The application supports real-time cart management, restaurant-wise menu display, and order checkout with validation.
 
 ---
 
 ## 📌 Features
 
 ### 👤 Customer Side
-- View a list of restaurants with images and descriptions
-- Browse menu items by restaurant and category
-- Add items to a shopping cart and place an order
-- View order summary and order confirmation
-- Leave reviews for menu items
+- Explore a curated list of restaurants with logos and descriptions
+- View menu items **specific to selected restaurant**
+- Add items to cart with adjustable quantity and stock limits
+- View cart summary with:
+  - Subtotal, tax (13%), and total
+  - Quantity adjustments with +/- buttons
+- Checkout page with full form validation (email, card, postal code)
+- Order summary in the checkout section
+- Confirmation screen after checkout
 
-### 🔐 Admin Panel
-- Admin login and authentication
-- Add/Edit/Delete:
-  - Restaurants (with image)
-  - Menu Items (with images, descriptions, categories)
-  - Orders and their status
-- View customer reviews and order history
-- GridView-based data management
-- Form validation using ASP.NET validators
+### 🔐 Admin Portal
+- Admin login (auth system placeholder for integration)
+- Manage:
+  - Restaurants (add/edit/delete + image)
+  - Menu items per restaurant (with categories and images)
+  - Order and cart data (view only)
+- GridView + DetailsView with validation
+- Backend form validation using ASP.NET Validators
 
 ---
 
@@ -30,13 +32,13 @@
 
 | Technology         | Purpose                                |
 |--------------------|----------------------------------------|
-| ASP.NET Web Forms  | Main web framework                     |
-| C#                 | Backend logic                          |
-| SQL Server / MDF   | Database (stored in `App_Data`)        |
-| ADO.NET / SqlDataSource | Database access                    |
-| Bootstrap          | Responsive design                      |
-| HTML/CSS/JS        | Frontend                              |
-| GridView & Repeater| Data display and editing               |
+| ASP.NET Web Forms  | Core framework                         |
+| C#                 | Server-side logic                      |
+| SQL Server / MDF   | Database storage                       |
+| ADO.NET / SqlDataSource | DB access                          |
+| Bootstrap 5        | UI styling and responsiveness          |
+| HTML/CSS/JS        | Frontend                               |
+| GridView / Repeater| Data binding & presentation            |
 
 ---
 
@@ -46,45 +48,44 @@
 QuickDish/
 │
 ├── App_Data/
-│   └── FoodDeliveryDB.mdf         # SQL Server database file
+│   └── FoodDeliveryDB.mdf             # Database
 │
 ├── Admin/
-│   ├── Login.aspx
-│   ├── Dashboard.aspx
-│   ├── ManageRestaurants.aspx
-│   └── ManageMenu.aspx
-│
-├── image/
-│   └── restaurants/                    # Contains restaurant and food images
+│   └── Admin.aspx                     # Admin management dashboard
 │
 ├── Pages/
-│   ├── Home.aspx
-│   ├── Restaurants.aspx
-│   ├── Menu.aspx
-│   ├── Cart.aspx
-│   ├── Checkout.aspx
-│   └── Confirmation.aspx
+│   ├── Home.aspx                      # Landing Page
+│   ├── Restaurants.aspx               # Lists all restaurants
+│   ├── RestaurantMenu.aspx?id={id}    # Restaurant-wise menu
+│   ├── Menu.aspx                      # General menu
+│   ├── Cart.aspx                      # Cart with quantity control
+│   ├── Checkout.aspx                  # Order placement
+│   └── Confirmation.aspx              # Order success
 │
-├── Site.Master                    # Master page
-├── Web.config                     # Config & DB connection
+├── image/
+│   └── restaurants/                   # Restaurant logos
+│   └── menu/                          # Food images
+│
+├── Site.Master                        # Common layout
+├── Web.config                         # Configuration & connection string
 └── README.md
 ```
 
 ---
 
-## 🛠️ Setup Instructions
+## 🚀 Setup Instructions
 
-1. **Clone or Download the Project**
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/kishankumar2607/QuickDish.git
    ```
 
 2. **Open in Visual Studio**
-   - Open the `.sln` file in Visual Studio.
-   - Ensure the `.mdf` file is present in `App_Data`.
+   - Open `QuickDish.sln`
+   - Ensure `FoodDeliveryDB.mdf` exists under `App_Data`
 
-3. **Update Connection String (if needed)**
-   In `Web.config`, update:
+3. **Update Connection String (if required)**
+   Inside `Web.config`:
    ```xml
    <connectionStrings>
      <add name="FoodDeliveryConnection"
@@ -94,30 +95,50 @@ QuickDish/
    ```
 
 4. **Run the Project**
-   - Press `F5` or click `Start` to run the application.
-   - Navigate between customer and admin views.
+   - Press `F5` or click **Start**
+   - Browse: `Home`, `Restaurants`, `Menu`, `Cart`, `Checkout`
 
-5. **Login Details**
-   - **Admin Email:** `bob@example.com`
-   - **Password:** (As hashed in DB - set up login handler accordingly)
-
----
-
-## 🖼️ Demo Images
-
-Images are stored in the `/image` folder and linked in the database under the `Image` fields for both restaurants and menu items.
+5. **Admin Login**
+   (Authentication placeholder — can be extended with login page + database credentials)
 
 ---
 
-## ✅ Accessibility & Responsive Design
+## 🖼️ Restaurants Sample
 
-- All text colors meet contrast standards using [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- Bootstrap ensures mobile responsiveness
-- Input validation with ASP.NET Validators for all forms
+Here are some of the restaurants preloaded in the database:
+
+| Name              | Description               | Location     |
+|-------------------|---------------------------|--------------|
+| Pizza Palace       | Authentic Italian Pizza   | Downtown     |
+| Sushi World        | Fresh Sushi and Rolls     | Midtown      |
+| Taco Time          | Mexican food fast & fresh | Eastside     |
+| Curry House        | Spicy Indian Cuisine      | South End    |
+| Green Fork Vegan   | Healthy plant-based meals | Green Lane   |
+| Spice Route Bistro | Bold and aromatic flavors | River Market |
 
 ---
 
-## 📣 Team
+## 🛒 Cart & Checkout Features
+
+- Quantity controlled with +/- buttons (1–10 range)
+- Live total updates
+- Cart stores items using session
+- Checkout form includes:
+  - Required fields
+  - Email & CVV pattern validation
+  - Order summary: Subtotal, Tax, Total
+
+---
+
+## ✅ Accessibility & UI
+
+- Clean and mobile-friendly with Bootstrap
+- Contrast compliant color choices
+- Dynamic validations using ASP.NET
+
+---
+
+## 👥 Team
 
 - Kishan Kumar Das
 - Bibin Tom Joseph
@@ -130,4 +151,5 @@ Images are stored in the `/image` folder and linked in the database under the `I
 
 ## 📧 Contact
 
-Have questions or suggestions? Feel free to open an issue or contact the project contributor.
+Questions or feedback?  
+Open an issue or message [@kishankumar2607](https://github.com/kishankumar2607) on GitHub.
