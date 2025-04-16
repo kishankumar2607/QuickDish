@@ -307,6 +307,16 @@ body {
         color: #555;
     }
 
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: start;
+    padding: 0rem 5rem;
+}
+
 .dishes-container {
     text-align: center;
     padding: 4rem 0rem;
@@ -318,15 +328,11 @@ body {
         font-size: 2rem;
         font-weight: 700;
         margin: 16px 0px;
+        padding-bottom:2.5rem;
     }
 
 .dishes {
     margin: 2rem 0rem;
-}
-
-.slick-slider {
-    display: flex !important;
-    justify-content: space-around !important;
 }
 
 .dish-item {
@@ -335,16 +341,8 @@ body {
     padding: 20px;
     text-align: center;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-    width: 330px !important;
+    width: 300px !important;
     transition: transform 0.3s;
-}
-
-.slick-track {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 30px !important;
-    margin: 2rem 0rem;
 }
 
 .dish-item:hover {
@@ -389,7 +387,7 @@ body {
 }
 
 .dish-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #555;
 }
@@ -402,7 +400,7 @@ body {
 }
 
 .dish-price {
-    color: #de5f1e;
+    color: #dc4914;
     font-size: 1.2rem;
     font-weight: 700;
 }
@@ -411,38 +409,6 @@ body {
     font-size: 1rem;
     font-weight: 700;
     color: #6319d1;
-}
-
-.navigation-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 3rem;
-}
-
-.nav-button {
-    background-color: #6319d1;
-    color: white;
-    border: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.left-bi {
-    font-size: 1.5rem;
-    -webkit-text-stroke: 1px;
-}
-
-.nav-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
 }
 
 .testimonial-section {

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="QuickDish._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Home.aspx.cs" Inherits="QuickDish._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -6,9 +7,12 @@
         <div class="container mian-div">
             <div class="text-section">
                 <h1>Dive into Delights Of Delectable <span>Food</span></h1>
-                <p>Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship</p>
+                <p>
+                    Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship
+                </p>
                 <div class="buttons">
-                    <asp:Button ID="btnOrderNow" runat="server" CssClass="order-btn" Text="Order Now" PostBackUrl="~/Menu.aspx" />
+                    <asp:Button ID="btnOrderNow" runat="server" CssClass="order-btn" Text="Order Now"
+                        PostBackUrl="~/Menu.aspx" />
                     <asp:Button ID="btnWatchVideo" runat="server" CssClass="video-btn" Text="Watch Video" />
                 </div>
             </div>
@@ -22,22 +26,22 @@
             <h2>Popular Categories</h2>
             <div class="categories">
                 <div class="category-item">
-                    <img src="image/Home-page/burger.png" alt="Main Dish" />
+                    <img src="image/burger.png" alt="Main Dish" />
                     <p>Main Dish</p>
                     <span>(86 dishes)</span>
                 </div>
                 <div class="category-item">
-                    <img src="image/Home-page/sandwitch.png" alt="Breakfast" />
+                    <img src="image/sandwitch.png" alt="Breakfast" />
                     <p>Breakfast</p>
                     <span>(12 breakfast)</span>
                 </div>
                 <div class="category-item">
-                    <img src="image/Home-page/dessert.png" alt="Dessert" />
+                    <img src="image/dessert.png" alt="Dessert" />
                     <p>Dessert</p>
                     <span>(48 dessert)</span>
                 </div>
                 <div class="category-item">
-                    <img src="image/Home-page/soda.png" alt="Browse All" />
+                    <img src="image/soda.png" alt="Browse All" />
                     <p>Browse All</p>
                     <span>(255 items)</span>
                 </div>
@@ -47,27 +51,32 @@
         <div class="container dishes-container">
             <h3 class="subtitle">SPECIAL DISHES</h3>
             <h2>Standout Dishes From Our Menu</h2>
-            <div class="dishes">
-                <div class="dish-item">
-                    <div class="dish-img">
-                        <img src="image/Home-page/Fattoush-salad.png" alt="Fattoush salad" />
-                        <div class="favorite-icon"><i class="bi-cart bi-cart-fill"></i></div>
-                    </div>
-                    <p class="dish-name">Fattoush salad</p>
-                    <p class="dish-description">A fresh and healthy salad made with a mix of vegetables...</p>
-                    <div class="dish-details">
-                        <span class="dish-price">$24.00</span>
-                        <span class="dish-rating">&#9733; 4.9</span>
-                    </div>
-                </div>
 
-            </div>
-
-            <div class="navigation-buttons">
-                <button class="nav-button" id="nextBtn"><i class="bi bi-arrow-left"></i></button>
-                <button class="nav-button" id="prevBtn"><i class="bi bi-arrow-right"></i></button>
+            <div class="dish-grid">
+                <asp:Repeater ID="rptDishes" runat="server" DataSourceID="SqlDataSourceDishes">
+                    <ItemTemplate>
+                        <div class="dish-item">
+                            <div class="dish-img">
+                                <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("ItemName") %>' />
+                                <div class="favorite-icon"><i class="bi bi-cart-fill"></i></div>
+                            </div>
+                            <p class="dish-name"><%# Eval("ItemName") %></p>
+                            <p class="dish-description"><%# Eval("Description") %></p>
+                            <div class="dish-details">
+                                <span class="dish-price">$<%# Eval("Price", "{0:F2}") %></span>
+                                <span class="dish-rating">&#9733; 4.9</span>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </div>
+
+
+        <asp:SqlDataSource ID="SqlDataSourceDishes" runat="server"
+            ConnectionString="<%$ ConnectionStrings:FoodDeliveryConnection %>"
+            SelectCommand="SELECT TOP 6 ItemName, Description, Price, ImageUrl FROM MenuItems WHERE ImageUrl IS NOT NULL AND Description IS NOT NULL">
+        </asp:SqlDataSource>
 
         <div class="container testimonial-section">
             <div class="testimonial-image">
@@ -85,7 +94,7 @@
                     </div>
                     <div class="feedback">
                         <h3>Customer Feedback</h3>
-                        <span class="rating"><i class="bi bi-star-fill"></i>4.9</span>
+                        <span class="rating">&#9733; 4.9</span>
                         <span>(18.6k Reviews)</span>
                     </div>
                 </div>
@@ -97,7 +106,7 @@
                 <h3 class="subtitle">OUR STORY & SERVICES</h3>
                 <h2>Our Culinary Journey And Services</h2>
                 <p>Rooted in passion, we curate unforgettable dining experiences...</p>
-                <button class="order-btn">Explore</button>
+                <asp:Button ID="btnExplore" runat="server" Text="Explore" cssClass="order-btn" OnClick="btnExplore_Click" />
             </div>
             <div class="services-cards">
                 <div class="service-card">

@@ -11,7 +11,12 @@ namespace QuickDish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
+        }
 
+        protected void btnExplore_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Menu");
         }
     }
 }
