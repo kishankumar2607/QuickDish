@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register Page" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="QuickDish.Register" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Register" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="QuickDish.Register" MasterPageFile="~/Site.Master" %>
 
 
 

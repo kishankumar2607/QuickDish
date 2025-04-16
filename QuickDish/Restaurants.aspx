@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Restaurants Page" Language="C#" AutoEventWireup="true" CodeBehind="Restaurants.aspx.cs"
+﻿<%@ Page Title="Restaurants" Language="C#" AutoEventWireup="true" CodeBehind="Restaurants.aspx.cs"
     Inherits="QuickDish.Restaurants" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

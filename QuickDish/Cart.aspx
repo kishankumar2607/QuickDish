@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Cart Page" Language="C#" AutoEventWireup="true" CodeBehind="Cart.aspx.cs"
+﻿<%@ Page Title="Cart" Language="C#" AutoEventWireup="true" CodeBehind="Cart.aspx.cs"
     Inherits="QuickDish.Cart" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

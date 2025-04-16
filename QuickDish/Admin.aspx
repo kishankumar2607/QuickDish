@@ -6,11 +6,13 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
+            margin-top: 1.5rem;
         }
 
             .header h1 {
                 font-size: 2.5rem;
                 font-weight: bold;
+                color: #dc4914;
             }
 
         .form-control, .btn {
@@ -26,7 +28,7 @@
     <div class="container py-4">
         <div class="header">
             <h1>Admin Dashboard</h1>
-            <p>Manage Restaurants and Menu Items</p>
+            <p class="text-black fs-5 fw-semibold mt-3">Manage Restaurants and Menu Items</p>
         </div>
 
         <div class="mb-4">

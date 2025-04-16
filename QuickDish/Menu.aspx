@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Menu Page" Language="C#" AutoEventWireup="true" CodeBehind="Menu.aspx.cs"
+﻿<%@ Page Title="Menu" Language="C#" AutoEventWireup="true" CodeBehind="Menu.aspx.cs"
     Inherits="QuickDish.Menu" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
