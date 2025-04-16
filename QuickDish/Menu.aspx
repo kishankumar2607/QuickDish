@@ -58,15 +58,15 @@
         </div>
 
         <div class="menu-cta-button">
-        <div class="cta-section">
-            <h2 class="fw-bold text-white">Hungry Already?</h2>
-            <p class="text-white fw-semibold mt-3 mb-4 fs-5">
-                Place your order now and enjoy the taste of freshly prepared
+            <div class="cta-section">
+                <h2 class="fw-bold text-white">Hungry Already?</h2>
+                <p class="text-white fw-semibold mt-3 mb-4 fs-5">
+                    Place your order now and enjoy the taste of freshly prepared
                 dishes.
-            </p>
-            <asp:Button ID="btnOrderNow" runat="server" Text="Go to Cart" CssClass="cta-button"
-                PostBackUrl="~/Cart.aspx" />
-        </div>
+                </p>
+                <asp:Button ID="btnOrderNow" runat="server" Text="Go to Cart" CssClass="cta-button"
+                    PostBackUrl="~/Cart.aspx" />
+            </div>
         </div>
 
     </main>

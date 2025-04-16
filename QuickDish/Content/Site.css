@@ -632,6 +632,8 @@ body {
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-items: center;
+    align-items: center;
     gap: 2.5rem;
 }
 
@@ -1108,6 +1110,96 @@ body {
 
 /* Contact Us Page Design Ends*/
 
+/* Reataurants Page Design Starts */
+
+.restaurant-main-div {
+    padding: 2rem 0rem 1rem;
+    text-align: center;
+}
+
+.restaurant-main-div h1 {
+    color: #dc4914;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.restaurant-main-div p {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-body h4 {
+    color: #dc4914;
+    font-weight: 700;
+}
+
+.card-body p {
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.restaurant-hero-banner {
+    position: relative;
+    background: url('../image/restaurant-banner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .restaurant-hero-banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .restaurant-hero-banner h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        z-index: 1;
+    }
+
+    .restaurant-hero-banner h2 {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #dc4914 !important;
+        z-index: 1;
+        background-color: rgba(72, 72, 72, 0.6);
+        padding: 10px 24px;
+        border-radius: 5px;
+        margin: 10px 0px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #fff, -1px 1px 0 #000, 1px 1px 0 #fff;
+    }
+
+    .restaurant-hero-banner p {
+        color: #ffffff !important;
+        font-size: 1.8rem !important;
+        z-index: 1;
+        width: 75%;
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+    }
+
+.menu-section{
+    padding-top: 5rem;
+}
+
+/* Reataurants Page Design Ends */
 /* Footer Design Starts */
 .footer-div {
     padding-top: 2.2rem;

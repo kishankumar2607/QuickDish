@@ -24,6 +24,15 @@ namespace QuickDish
         protected global::System.Web.UI.WebControls.Label lblRestaurantName;
 
         /// <summary>
+        /// lblRestaurantName2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRestaurantName2;
+
+        /// <summary>
         /// RestaurantMenuRepeater control.
         /// </summary>
         /// <remarks>
