@@ -2,43 +2,53 @@
     Inherits="QuickDish.Menu" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <main>
-        <!-- Header Section -->
-        <div class="container text-center py-5">
-            <h5 class="text-uppercase text-warning fw-bold mb-2">Our Menu</h5>
-            <h2 class="fw-bold mb-3">Explore Our Delicious Menu Items</h2>
-            <p class="text-muted">Enjoy a wide variety of meals made with love and premium ingredients.
+        <div class="menu-hero-banner mb-5">
+            <h1>Explore the Best Dishes in Town</h1>
+            <p class="lead mt-3">
+                Delicious meals delivered fresh from your favorite restaurants
+            </p>
+            <asp:Button ID="btnExplore" runat="server" Text="Order Now" CssClass="button order-now-button"
+                PostBackUrl="~/Restaurants.aspx" />
+        </div>
+
+        <div class="container text-center py-4 menu-section">
+            <h5 class="subtitle">Our Menu</h5>
+            <h2 class="fw-bold mb-3 text-black mt-2">Explore Our Delicious Menu Items</h2>
+            <p class="text-muted mb-4 fs-5">
+                Enjoy a wide variety of meals made with love and premium
+                ingredients.
             </p>
         </div>
 
-        <!-- Menu Items Grid -->
         <div class="container pb-5">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="menu-grid">
                 <asp:Repeater ID="MenuRepeater" runat="server">
                     <ItemTemplate>
-                        <div class="col">
-                            <div class="card h-100 border-0 shadow rounded-4">
-                                <img src='<%# ResolveUrl(Eval("ImageUrl").ToString()) %>'
-                                    alt='<%# Eval("ItemName") %>'
-                                    class="card-img-top rounded-top-4"
-                                    style="height: 220px; object-fit: cover;" />
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h5 class="card-title text-dark fw-bold"><%# Eval("ItemName") %></h5>
-                                    <p class="card-text text-muted small mb-2"><%# Eval("Description") %></p>
-                                    <p class="text-secondary mb-1"><strong>Category:</strong> <%# Eval("Category") %>
+                        <div class="menu-item">
+                            <img src='<%# ResolveUrl(Eval("ImageUrl").ToString()) %>'
+                                alt='<%# Eval("ItemName") %>'
+                                class="menu-item-image" />
+                            <div class="menu-item-content">
+                                <h5><%# Eval("ItemName") %></h5>
+                                <p><%# Eval("Description") %></p>
+                                <div class="d-flex align-items-center justify-content-between mt-2 mb-2">
+                                    <p>
+                                        <strong>Category:</strong> <%# Eval("Category") %>
                                     </p>
-                                    <div class="d-flex justify-content-between align-items-center mt-auto">
-                                        <span class="fw-semibold text-primary">$<%# Eval("Price", "{0:F2}") %></span>
-                                        <!--<button type="button" class="btn btn-outline-warning btn-sm px-3">Add to Cart</button>-->
-                                        <asp:Button
-                                            runat="server"
-                                            Text="Add to Cart"
-                                            CssClass="btn btn-outline-warning btn-sm px-3"
-                                            CommandName="AddToCart"
-                                            CommandArgument='<%# Eval("ItemName") + "|" + Eval("Price") + "|" + Eval("ImageUrl") %>'
-                                            OnCommand="AddToCart_Command" />
-
-                                    </div>
+                                    <p>
+                                        <strong>Price:</strong> $<%# Eval("Price", "{0:F2}") %>
+                                    </p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center mt-1">
+                                    <asp:Button
+                                        runat="server"
+                                        Text="Add to Cart"
+                                        CssClass="menu-add-to-cart-button"
+                                        CommandName="AddToCart"
+                                        CommandArgument='<%# Eval("ItemName") + "|" + Eval("Price") + "|" + Eval("ImageUrl") %>'
+                                        OnCommand="AddToCart_Command" />
                                 </div>
                             </div>
                         </div>
@@ -46,5 +56,18 @@
                 </asp:Repeater>
             </div>
         </div>
+
+        <div class="menu-cta-button">
+        <div class="cta-section">
+            <h2 class="fw-bold text-white">Hungry Already?</h2>
+            <p class="text-white fw-semibold mt-3 mb-4 fs-5">
+                Place your order now and enjoy the taste of freshly prepared
+                dishes.
+            </p>
+            <asp:Button ID="btnOrderNow" runat="server" Text="Go to Cart" CssClass="cta-button"
+                PostBackUrl="~/Cart.aspx" />
+        </div>
+        </div>
+
     </main>
 </asp:Content>

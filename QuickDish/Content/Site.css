@@ -10,7 +10,7 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-.body-content{
+.body-content {
     margin-top: 6rem;
 }
 /* Navigation Bar Design Starts */
@@ -328,7 +328,7 @@ body {
         font-size: 2rem;
         font-weight: 700;
         margin: 16px 0px;
-        padding-bottom:2.5rem;
+        padding-bottom: 2.5rem;
     }
 
 .dishes {
@@ -345,9 +345,9 @@ body {
     transition: transform 0.3s;
 }
 
-.dish-item:hover {
-    transform: translateY(-10px);
-}
+    .dish-item:hover {
+        transform: translateY(-10px);
+    }
 
 .dish-img {
     position: relative;
@@ -582,8 +582,155 @@ body {
 
 /* Home Page Design Ends*/
 
-/* About Us Page Design Starts */
+/* Menu Page Design Starts */
 
+.menu-hero-banner {
+    position: relative;
+    background: url('../image/menu-banner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .menu-hero-banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .menu-hero-banner h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #ffffff;
+        z-index: 1;
+    }
+
+    .menu-hero-banner p{
+        color: #ffffff;
+        font-size: 1.8rem;
+        z-index: 1;
+    }
+
+.order-now-button{
+    margin-top: 0.5rem;
+    z-index: 1;
+}
+
+.menu-section h2 {
+    font-weight: bold;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.dish-item {
+    display: flex;
+}
+
+.menu-item{
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in;
+}
+
+    .menu-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.menu-item-image{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.menu-item-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+    .menu-item-content h5{
+        color: #dc4914;
+        font-weight: 700;
+    }
+
+    .menu-item-content p{
+        color: #000000;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .menu-item-content p strong{
+        color: #dc4914;
+        font-weight: 700;
+    }
+
+.menu-add-to-cart-button{
+    background-color: #dc4914;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    border: 2px solid #dc4914;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+}
+
+.menu-add-to-cart-button:hover{
+    background-color: transparent;
+    color: #dc4914;
+}
+
+.menu-cta-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section {
+    width: 900px;
+    background-color: #dc4914;
+    padding: 3rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 3rem 0rem;
+}
+
+.cta-button{
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #dc4914;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 16px;
+    transition: all 0.3s ease-in;
+}
+
+.cta-button:hover{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* Menu Page Design Ends */
+/* About Us Page Design Starts */
 .about-section h3 {
     font-size: 3rem;
     color: #dc4914;
@@ -657,23 +804,23 @@ body {
 
 /* Contact Us Page Design Starts*/
 
-.contact-section{
-   text-align: center;
-   margin-bottom: 3rem;
+.contact-section {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.contact-section h3 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #dc4914;
-}
+    .contact-section h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #dc4914;
+    }
 
-.contact-section p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 1rem;
-    color: #000000;
-}
+    .contact-section p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        color: #000000;
+    }
 
 /* Contact Us Page Design Ends*/
 
